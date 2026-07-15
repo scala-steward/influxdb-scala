@@ -19,6 +19,7 @@ project/plugins/project/
 /.bsp/sbt.json
 
 # VsCode extensions
+.vscode
 .metals
 metals.sbt
 .bloop
