@@ -64,12 +64,12 @@ lazy val repoSettings = Seq(
 )
 
 lazy val testDependencies = Seq(
-  "ch.qos.logback"     % "logback-classic"        % logbackVersion % Test,
-  "org.specs2"        %% "specs2-core"            % specs2Version  % Test,
-  "org.specs2"        %% "specs2-junit"           % specs2Version  % Test,
-  "com.typesafe.play" %% "play-ahc-ws-standalone" % playWsVersion  % Test,
-  ("com.whisk" %% "docker-testkit-core" % dockerTestkitVersion % Test).excludeAll(nettyExclusions*)
-).map(_.excludeAll(libraryExclusions*))
+  "ch.qos.logback"     % "logback-classic"        % logbackVersion       % Test,
+  "org.specs2"        %% "specs2-core"            % specs2Version        % Test,
+  "org.specs2"        %% "specs2-junit"           % specs2Version        % Test,
+  "com.typesafe.play" %% "play-ahc-ws-standalone" % playWsVersion        % Test,
+  ("com.whisk"        %% "docker-testkit-core"    % dockerTestkitVersion % Test).excludeAll(nettyExclusions *)
+).map(_.excludeAll(libraryExclusions *))
 
 lazy val root = (project in file("."))
   .settings(
@@ -80,7 +80,7 @@ lazy val root = (project in file("."))
       "com.typesafe.play" %% "play-ws-standalone-json" % playWsVersion,
       "org.slf4j"          % "slf4j-api"               % slf4jVersion,
       "org.slf4j"          % "jcl-over-slf4j"          % slf4jVersion
-    ).map(_.excludeAll(libraryExclusions*)) ++ testDependencies,
+    ).map(_.excludeAll(libraryExclusions *)) ++ testDependencies,
     releaseNotesURL := scmInfo.value.map(scm => uri(s"${scm.browseUrl}/releases"))
   )
   .settings(repoSettings)
